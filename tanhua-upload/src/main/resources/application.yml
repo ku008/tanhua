@@ -1,0 +1,23 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: tanhua-upload
+  data:
+    mongodb:
+#      host: 127.0.0.1
+#      port: 27017
+      uri: mongodb://tanhua:tanhua@127.0.0.1:27017/tanhua
+#      username: tanhua
+#      password: tanhua
+      database: tanhua
+  main:
+    allow-bean-definition-overriding: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+#multipart:
+#  maxFileSize: 10Mb
+#  maxRequestSize: 100Mb

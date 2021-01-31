@@ -1,0 +1,45 @@
+server:
+  port: 9000
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/tanhua?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    dbcp2:
+      min-idle: 5
+      max-total: 5
+      initial-size: 5
+      max-wait-millis: 200
+  application:
+    name: tanhua-sso
+
+  jpa:
+    show-sql: true
+  redis:
+    database: 1
+    host: localhost
+    password:
+    port: 6379
+
+jwt:
+  secret: dx688
+  expireMinutes: 30
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+  global-config:
+    db-config:
+      id-type: auto
+      table-underline: true
+      column-format:
+      table-prefix: t_
+
+sso:
+  urls :
+    - url: "sms"
+    - url: "login"
